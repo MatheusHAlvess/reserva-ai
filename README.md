@@ -1,4 +1,4 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/69114b9aa610439881a3b4a0237b14b9)](https://www.codacy.com/gh/esMEIproject/gerenciamento-servicos/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=esMEIproject/gerenciamento-servicos&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.com/esMEIproject/gerenciamento-servicos.svg?branch=main)](https://travis-ci.com/esMEIproject/gerenciamento-servicos)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d983b3d0fcd544f3958002ea310442ad)](https://app.codacy.com/gh/MatheusHAlvess/reserva-ai/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 # Sistema de Gerenciamento de Hotel
 ## :octocat: Integrantes
 [Genário A.](https://github.com/genarioazevedoufape) | [José Lucas V.](https://github.com/jlvlg) | [Matheus A.](https://github.com/MatheusHAlvess) | [Thiago A.](https://github.com/Rievvy-Dev) | [William B.](https://github.com/michloliveira)
