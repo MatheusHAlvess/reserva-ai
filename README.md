@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cc4efcb9d1549fdb006f6cd91c347e9)](https://app.codacy.com/gh/MatheusHAlvess/reserva-ai?utm_source=github.com&utm_medium=referral&utm_content=MatheusHAlvess/reserva-ai&utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/69114b9aa610439881a3b4a0237b14b9)](https://www.codacy.com/gh/esMEIproject/gerenciamento-servicos/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=esMEIproject/gerenciamento-servicos&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.com/esMEIproject/gerenciamento-servicos.svg?branch=main)](https://travis-ci.com/esMEIproject/gerenciamento-servicos)
 # Sistema de Gerenciamento de Hotel
 ## :octocat: Integrantes
