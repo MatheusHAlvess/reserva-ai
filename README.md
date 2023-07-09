@@ -13,6 +13,9 @@ O objetivo principal deste sistema é oferecer uma plataforma eficiente e fácil
 *   Versão 3.1.1
 ### [Rails](https://rubyonrails.org/)
 *   Versão 7.0.2.2
+### [Railway](https://railway.app/)
+*   Domain https://reserva-ai-production.up.railway.app/
 
 ## 🚧 Status do Projeto
 Iniciado
+
