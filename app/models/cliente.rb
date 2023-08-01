@@ -1,4 +1,6 @@
 class Cliente < ApplicationRecord
+  has_many :reservas
+
   validates :nome_completo, presence: true
   validates :data_nascimento, presence: true
   validates :cpf, presence: true, uniqueness: true,
