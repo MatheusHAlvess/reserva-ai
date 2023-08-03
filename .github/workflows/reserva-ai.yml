@@ -58,6 +58,10 @@ jobs:
         run: |
           bundle exec rails db:prepare
 
+      - name: Debug
+        run: |
+          cat /home/runner/work/reserva-ai/reserva-ai/test/controllers/clientes_controller_test.rb
+
       - name: Run Unit Tests
         run: |
           bundle exec rails test
