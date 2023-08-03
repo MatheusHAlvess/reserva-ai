@@ -2,8 +2,19 @@ name: CI
 on: [push, pull_request_target]
 
 jobs:
-  test:
+  tests:
+    name: Run Tests
     runs-on: ubuntu-latest
+    
+    env:
+      PG_DATABASE: postgres
+      PG_HOST: localhost
+      PG_USER: postgres
+      PG_PASSWORD: password
+      RAILS_ENV: actions
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      WITH_COVERAGE: true
+      DISABLE_SPRING: 1
 
     services:
       postgres:
@@ -43,15 +54,14 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
-      - name: Run Tests
-        env:
-          PG_DATABASE: postgres
-          PG_HOST: localhost
-          PG_USER: postgres
-          PG_PASSWORD: password
-          RAILS_ENV: actions
-          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-          WITH_COVERAGE: true
-          DISABLE_SPRING: 1
+      - name: Prepare Database
         run: |
           bundle exec rails db:prepare
+
+      - name: Run Unit Tests
+        run: |
+          bundle exec rails test
+      
+      - name: Run Cucumber
+        run: |
+          bundle exec cucumber
