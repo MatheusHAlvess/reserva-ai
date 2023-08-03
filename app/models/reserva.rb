@@ -14,7 +14,11 @@ class Reserva < ApplicationRecord
               message: 'deve ser futura à entrada'
             }
   validates :quarto,
-            presence: true
+            presence: true,
+            numericality: {
+              greater_than: 0,
+              message: 'deve ser maior que 0'
+            }
 
   validate :quarto_reservado_duas_vezes
 
@@ -24,7 +28,7 @@ class Reserva < ApplicationRecord
 
       eformat = reserva.entrada.strftime('%d/%m/%Y')
       sformat = reserva.saida.strftime('%d/%m/%Y')
-      errors.add(:quarto, "#{quarto} já está reservado entre #{eformat} e #{sformat}")
+      errors.add(:quarto, "#{quarto} já está reservado de #{eformat} até #{sformat}")
     end
   end
 end
