@@ -34,9 +34,11 @@ class ClientesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cliente" do
-    patch cliente_url(@cliente), params: { cliente: { cpf: @cliente.cpf, data_nascimento: @cliente.data_nascimento, email: @cliente.email, nome_completo: @cliente.nome_completo } }
-    assert_redirected_to cliente_url(@cliente)
+    cliente = clientes(:one)
+    patch cliente_url(cliente), params: { cliente: { cpf: @cliente.cpf, data_nascimento: @cliente.data_nascimento, email: @cliente.email, nome_completo: @cliente.nome_completo } }
+    assert_redirected_to cliente_url(cliente)
   end
+
 
   test "should destroy cliente" do
     assert_difference("Cliente.count", -1) do
