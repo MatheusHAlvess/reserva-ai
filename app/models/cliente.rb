@@ -1,5 +1,5 @@
 class Cliente < ApplicationRecord
-  has_many :reservas
+  has_many :reservas, dependent: :destroy, inverse_of: :cliente
 
   validates :nome_completo, presence: true
   validates :data_nascimento, presence: true
