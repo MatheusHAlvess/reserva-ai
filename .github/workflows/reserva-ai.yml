@@ -58,7 +58,7 @@ jobs:
 
       - name: Prepare Database
         run: |
-          bundle exec rails db:reset db:prepare
+          bundle exec rails db:reset db:migrate
 
       - name: Run Unit Tests
         run: |
