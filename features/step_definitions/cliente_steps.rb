@@ -49,7 +49,7 @@ When('preencho o formulário com nome {string}, data de nascimento {string}, CPF
 end
 
 Then('devo ver uma mensagem de erro informando que o e-mail é inválido') do
-  expect(page).to have_content("Email is invalid")
+  expect(page).to have_content("Email inválido")
 end
 
 Given('estou na lista de clientes cadastrados') do
