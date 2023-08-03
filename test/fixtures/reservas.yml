@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente: one
+  quarto: 1
+  entrada: <%= (Date.today + 1).to_s %>
+  saida: <%= (Date.today + 2).to_s %>
+
+two:
+  cliente: two
+  quarto: 1
+  entrada: <%= (Date.today + 3).to_s %>
+  saida: <%= (Date.today + 4).to_s %>

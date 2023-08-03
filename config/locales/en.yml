@@ -30,4 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        blank: 'é um atributo necessário'
+        invalid: 'inválido'
+        taken: 'já existe'
+  date:
+    formats:
+      default: '%d/%m/%Y'

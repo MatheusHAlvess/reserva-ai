@@ -17,7 +17,7 @@ class ClientesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cliente" do
     assert_difference("Cliente.count") do
-      post clientes_url, params: { cliente: { cpf: @cliente.cpf, data_nascimento: @cliente.data_nascimento, email: @cliente.email, nome_completo: @cliente.nome_completo } }
+      post clientes_url, params: { cliente: { cpf: "01928374655", data_nascimento: @cliente.data_nascimento, email: @cliente.email, nome_completo: @cliente.nome_completo } }
     end
 
     assert_redirected_to cliente_url(Cliente.last)
