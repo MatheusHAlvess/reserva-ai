@@ -58,11 +58,11 @@ jobs:
 
       - name: Prepare Database
         run: |
-          bundle exec rails db:migrate
+          bundle exec rails db:prepare
 
       - name: Run Cucumber
         run: |
-          bundle exec cucumber
+          bundle exec cucumber RAILS_ENV=test
 
       - name: Run Unit Tests
         run: |
