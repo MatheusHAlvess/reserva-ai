@@ -1,0 +1,11 @@
+<!-- app/views/reservas/buscar.html.erb -->
+<h1>Buscar Reservas</h1>
+
+<%= form_tag resultado_busca_reservas_path, method: :get do %>
+  <div class="form-group">
+    <%= label_tag :cpf, 'CPF do Cliente:' %>
+    <%= text_field_tag :cpf, nil, class: 'form-control' %>
+  </div>
+
+  <%= submit_tag 'Buscar', class: 'btn btn-primary' %>
+<% end %>
