@@ -4,7 +4,7 @@ class Reserva < ApplicationRecord
   validates :entrada,
             presence: true,
             comparison: {
-              greater_than: Date.today,
+              greater_than: Time.zone.today,
               message: 'deve ser futura a hoje'
             }
   validates :saida,
