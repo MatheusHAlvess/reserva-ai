@@ -22,7 +22,12 @@ When('eu clico no botão Update Cliente') do
 end
 
 Given('existe um cliente cadastrado com nome {string}') do |nome_cliente|
-  Cliente.create(nome_completo: nome_cliente, data_nascimento: '1990-01-01', cpf: '12345678901', email: 'cliente@example.com')
+  visit '/clientes/new'
+  fill_in 'cliente[nome_completo]', with: nome_cliente
+  fill_in 'cliente[data_nascimento]', with: '1990-01-01'
+  fill_in 'cliente[cpf]', with: '12345678901'
+  fill_in 'cliente[email]', with: 'cliente@example.com'
+  click_button 'Create Cliente'
 end
 
 When('eu atualizo o formulário com nome {string} e e-mail {string}') do |novo_nome, novo_email|
