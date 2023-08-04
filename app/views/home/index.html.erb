@@ -1,0 +1,38 @@
+<!-- app/views/home.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema de Gerenciamento de Hotel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      body {
+          padding: 30px;
+      }
+      .button-container {
+          display: flex;
+          justify-content: space-between;
+      }
+      .button {
+          width: 30%;
+          padding: 20px;
+          text-align: center;
+          background-color: #007bff;
+          color: #fff;
+          font-size: 18px;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      .button:hover {
+          background-color: #0056b3;
+      }
+  </style>
+</head>
+<body>
+<h1>Sistema de Gerenciamento de Hotel</h1>
+<div class="button-container">
+  <a href="<%= clientes_path %>" class="button">Cadastrar Cliente</a>
+  <a href="<%= reservas_path %>" class="button">Criar Reserva</a>
+  <a href="<%= busca_reservas_path %>" class="button">Buscar Reservas</a>
+</div>
+</body>
+</html>
