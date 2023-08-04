@@ -23,10 +23,21 @@ class ReservasController < ApplicationController
   def buscar
   end
 
-  # POST /reservas/buscar
+
   def resultado
     cpf = params[:cpf]
     @reservas = Reserva.buscar_por_cpf(cpf)
+
+    if params[:data_inicio].present? && params[:data_fim].present?
+      data_inicio = Date.parse(params[:data_inicio])
+      data_fim = Date.parse(params[:data_fim])
+      @reservas = @reservas.select do |reserva|
+        reserva.entrada >= data_inicio && reserva.saida <= data_fim
+      end
+    end
+    @data_inicio_filtro = params[:data_inicio]
+    @data_fim_filtro = params[:data_fim]
+    @cpf = cpf
   end
 
   # POST /reservas or /reservas.json
