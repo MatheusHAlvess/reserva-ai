@@ -31,4 +31,11 @@ class Reserva < ApplicationRecord
       errors.add(:quarto, "#{quarto} já está reservado de #{eformat} até #{sformat}")
     end
   end
+
+  def self.buscar_por_cpf(cpf)
+    cliente = Cliente.find_by(cpf: cpf)
+    return [] unless cliente
+
+    where(cliente: cliente)
+  end
 end

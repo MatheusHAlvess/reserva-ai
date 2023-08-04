@@ -1,0 +1,29 @@
+<!-- app/views/reservas/resultado.html.erb -->
+<h1>Resultado da Busca de Reservas</h1>
+
+<% if @reservas.any? %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Quarto</th>
+      <th>Entrada</th>
+      <th>Saída</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @reservas.each do |reserva| %>
+      <tr>
+        <td><%= reserva.cliente.nome_completo %></td>
+        <td><%= reserva.quarto %></td>
+        <td><%= reserva.entrada.strftime('%d/%m/%Y') %></td>
+        <td><%= reserva.saida.strftime('%d/%m/%Y') %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Nenhuma reserva encontrada para o CPF informado.</p>
+<% end %>
+
+<%= link_to 'Voltar para a busca', busca_reservas_path, class: 'btn btn-secondary' %>

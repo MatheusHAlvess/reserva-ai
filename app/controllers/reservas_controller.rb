@@ -19,6 +19,16 @@ class ReservasController < ApplicationController
   def edit
   end
 
+  # GET /reservas/buscar
+  def buscar
+  end
+
+  # POST /reservas/buscar
+  def resultado
+    cpf = params[:cpf]
+    @reservas = Reserva.buscar_por_cpf(cpf)
+  end
+
   # POST /reservas or /reservas.json
   def create
     @reserva = Reserva.new(reserva_params)
