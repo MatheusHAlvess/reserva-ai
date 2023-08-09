@@ -9,8 +9,8 @@ Feature: Busca de reservas
     When eu informo o CPF "12345678901" e clico em Buscar
     Then o sistema deve retornar as reservas encontradas na lista de resultados
 
-  Scenario: Buscar reservas com CPF de um cliente que não existe
-    Given não existe um cliente cadastrado com CPF "61745823910"
+  Scenario: Buscar reservas com CPF de um cliente que nao existe
+    Given nao existe um cliente cadastrado com CPF "61745823910"
     And eu estou na tela de busca de reservas
     When eu informo o CPF "61745823910" e clico em Buscar
     Then o sistema deve mostrar que nenhuma reserva encontrada para o CPF
