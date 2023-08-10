@@ -1,0 +1,12 @@
+<h1>Buscar Clientes</h1>
+
+<div>
+  <%= form_tag(resultado_busca_clientes_path, method: :get) do %>
+    <%= label_tag(:termo, "Buscar por nome, cpf ou e-mail:") %>
+    <%= text_field_tag(:termo) %>
+    <%= submit_tag("Buscar") %>
+    </div>
+
+  <% end %>
+
+

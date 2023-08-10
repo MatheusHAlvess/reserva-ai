@@ -18,6 +18,16 @@ class ClientesController < ApplicationController
   # GET /clientes/1/edit
   def edit
   end
+  # GET /clientes/busca
+  # GET /clientes/buscar
+  #
+  def buscar
+  end
+
+  def resultado
+    termo = params[:termo]
+    @clientes = Cliente.busca_por_termo(termo)
+  end
 
   # POST /clientes or /clientes.json
   def create
@@ -58,13 +68,13 @@ class ClientesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cliente
-      @cliente = Cliente.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cliente
+    @cliente = Cliente.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def cliente_params
-      params.require(:cliente).permit(:nome_completo, :data_nascimento, :cpf, :email)
-    end
+  # Only allow a list of trusted parameters through.
+  def cliente_params
+    params.require(:cliente).permit(:nome_completo, :data_nascimento, :cpf, :email)
+  end
 end
