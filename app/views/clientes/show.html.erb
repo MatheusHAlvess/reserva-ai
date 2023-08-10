@@ -4,7 +4,11 @@
 
 <div>
   <%= link_to "Editar", edit_cliente_path(@cliente) %> |
-  <%= link_to "Voltar para Clientes", clientes_path %>
+  <%= link_to "Voltar para menu", root_path %> |
+  <%= link_to "Buscar", busca_clientes_path %>
+
+
+
 
   <%= button_to "Deletar", @cliente, method: :delete %>
 </div>
