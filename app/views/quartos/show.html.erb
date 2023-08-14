@@ -1,17 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @cliente %>
+<%= render @quarto %>
 
 <div>
   <h2>
     Reservas
   </h2>
   <ul>
-    <% @cliente.reservas.order(:entrada).filter{|r| r.entrada >= Time.zone.today}.each do |reserva| %>
+    <% @quarto.reservas.order(:entrada).filter{|r| r.entrada >= Time.zone.today}.each do |reserva| %>
       <li>
         <p>
-          <strong>Quarto:</strong>
-          <%= reserva.quarto.numero %>
+          <strong>Cliente:</strong>
+          <%= reserva.cliente.nome_completo %>
         </p>
 
         <p>
@@ -31,8 +31,8 @@
 </div>
 
 <div>
-  <%= link_to "Editar", edit_cliente_path(@cliente) %> |
-  <%= link_to "Voltar para Clientes", clientes_path %>
+  <%= link_to "Editar", edit_quarto_path(@quarto) %> |
+  <%= link_to "Voltar para Quartos", quartos_path %>
 
-  <%= button_to "Deletar", @cliente, method: :delete %>
+  <%= button_to "Deletar", @quarto, method: :delete %>
 </div>

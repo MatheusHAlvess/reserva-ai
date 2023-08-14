@@ -8,9 +8,14 @@ class ReservaTest < ActiveSupport::TestCase
       cpf: "98765432100",
       email: "lucassilva@gmail.com"
     )
+    quarto = Quarto.create(
+      numero: 1,
+      preco: 9.99,
+      capacidade: 1
+    )
     reserva = Reserva.new(
       cliente: cliente,
-      quarto: 101,
+      quarto: quarto,
       entrada: Date.tomorrow,
       saida: Date.tomorrow + 3
     )
@@ -39,9 +44,14 @@ class ReservaTest < ActiveSupport::TestCase
       cpf: "98765432100",
       email: "lucassilva@gmail.com"
     )
+    quarto = Quarto.create(
+      numero: 1,
+      preco: 9.99,
+      capacidade: 1
+    )
     reserva = Reserva.new(
       cliente: cliente,
-      quarto: 101,
+      quarto: quarto,
       entrada: Date.yesterday,
       saida: Date.tomorrow
     )
@@ -55,9 +65,14 @@ class ReservaTest < ActiveSupport::TestCase
       cpf: "98765432100",
       email: "lucassilva@gmail.com"
     )
+    quarto = Quarto.create(
+      numero: 1,
+      preco: 9.99,
+      capacidade: 1
+    )
     reserva = Reserva.new(
       cliente: cliente,
-      quarto: 101,
+      quarto: quarto,
       entrada: Date.tomorrow,
       saida: Date.yesterday
     )

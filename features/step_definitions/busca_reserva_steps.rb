@@ -12,7 +12,7 @@ Given('e existe reservas cadastradas para um cliente com CPF {string}') do |stri
 
   visit new_reserva_path
   select 'Fabia', from: 'Cliente'
-  fill_in 'Quarto', with: '1'
+  select 1, from: 'Quarto'
   fill_in 'Entrada', with: '2023-09-01'
   fill_in 'Saida', with: '2023-10-01'
   click_button 'Reservar quarto'
@@ -28,7 +28,7 @@ Then('o sistema deve retornar as reservas encontradas na lista de resultados') d
   expect(page).to have_content("Resultado da Busca de Reservas")
 end
 
-Given('não existe um cliente cadastrado com CPF {string}') do |string|
+Given('nao existe um cliente cadastrado com CPF {string}') do |string|
   visit '/clientes'
   expect(page).not_to have_content(string)
 end
@@ -53,7 +53,7 @@ Given('e existe reservas cadastradas para um cliente com CPF {string} com data d
 
   visit new_reserva_path
   select 'Fabia', from: 'Cliente'
-  fill_in 'Quarto', with: '1'
+  select 1, from: 'Quarto'
   fill_in 'Entrada', with: data_inicio
   fill_in 'Saida', with: data_fim
   click_button 'Reservar quarto'

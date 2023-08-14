@@ -1,12 +1,12 @@
 <div id="<%= dom_id reserva %>">
   <p>
     <strong>Cliente:</strong>
-    <%= reserva.cliente.nome_completo %>
+    <%= link_to reserva.cliente.nome_completo, reserva.cliente %>
   </p>
 
   <p>
     <strong>Quarto:</strong>
-    <%= reserva.quarto %>
+    <%= link_to reserva.quarto.numero, reserva.quarto %>
   </p>
 
   <p>

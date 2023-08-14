@@ -86,6 +86,6 @@ class ReservasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reserva_params
-      params.require(:reserva).permit(:cliente_id, :quarto, :entrada, :saida)
+      params.require(:reserva).permit(:cliente_id, :quarto_id, :entrada, :saida)
     end
 end
