@@ -17,8 +17,8 @@
   </div>
 
   <div>
-    <%= form.label :quarto, style: "display: block" %>
-    <%= form.number_field :quarto %>
+    <%= form.label :quarto_id, style: "display: block" %>
+    <%= form.collection_select :quarto_id, Quarto.all, :id, :numero %>
   </div>
 
   <div>
@@ -34,4 +34,10 @@
   <div>
     <%= form.submit "Reservar quarto" %>
   </div>
+
+  <script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+  </script>
 <% end %>
