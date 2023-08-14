@@ -3,6 +3,34 @@
 <%= render @cliente %>
 
 <div>
+  <h2>
+    Reservas
+  </h2>
+  <ul>
+    <% @cliente.reservas.order(:entrada).filter{|r| r.entrada >= Time.zone.today}.each do |reserva| %>
+      <li>
+        <p>
+          <strong>Quarto:</strong>
+          <%= reserva.quarto.numero %>
+        </p>
+
+        <p>
+          <strong>Entrada:</strong>
+          <%= l reserva.entrada %>
+        </p>
+
+        <p>
+          <strong>Saida:</strong>
+          <%= l reserva.saida %>
+        </p>
+
+        <%= link_to "Visualizar reserva", reserva %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
   <%= link_to "Editar", edit_cliente_path(@cliente) %> |
   <%= link_to "Voltar para Clientes", clientes_path %>
 
