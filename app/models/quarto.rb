@@ -5,24 +5,19 @@ class Quarto < ApplicationRecord
   validates :numero,
             presence: true,
             comparison: {
-              greater_than: 0
+              greater_than: 0,
+              message: 'deve ser maior que 0'
             }
   validates :preco,
             presence: true,
             comparison: {
-              greater_than: 0
+              greater_than: 0,
+              message: 'deve ser maior que 0'
             }
   validates :capacidade,
             presence: true,
             comparison: {
-              greater_than: 0
+              greater_than: 0,
+              message: 'deve ser maior que 0'
             }
-
-  def quarto_ocupado?(entrada, saida)
-    reservas.each do |reserva|
-      next unless (entrada < reserva.saida) and (saida > reserva.entrada)
-      return true
-    end
-    false
-  end
 end

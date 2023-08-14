@@ -11,7 +11,7 @@ class Cliente < ApplicationRecord
             uniqueness: true,
             format: {
               with: /\A\d{11}\z/,
-              message: 'deve conter 11 dígitos numéricos'
+              message: 'deve conter 11 digitos numericos'
             }
   validates :email,
             presence: true,

@@ -12,16 +12,19 @@ class Reserva < ApplicationRecord
             presence: true,
             comparison: {
               greater_than: :entrada,
-              message: 'deve ser futura à entrada'
+              message: 'deve ser futura a entrada'
             }
 
   validate :quarto_reservado_duas_vezes
 
   def quarto_reservado_duas_vezes
-    if not quarto.nil? and quarto.quarto_ocupado?(entrada, saida)
-      eformat = entrada.strftime('%d/%m/%Y')
-      sformat = saida.strftime('%d/%m/%Y')
-      errors.add(:quarto, "#{quarto.numero} já está reservado de #{eformat} até #{sformat}")
+    unless quarto.nil?
+      quarto.reservas.each do |reserva|
+        next unless (entrada < reserva.saida) and (saida > reserva.entrada)
+        eformat = reserva.entrada.strftime('%d/%m/%Y')
+        sformat = reserva.saida.strftime('%d/%m/%Y')
+        errors.add(:quarto, "#{quarto.numero} ja esta reservado de #{eformat} ate #{sformat}")
+      end
     end
   end
 
