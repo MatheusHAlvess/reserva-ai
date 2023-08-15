@@ -5,7 +5,9 @@ class QuartosController < ApplicationController
   def index
     @quartos = Quarto.all
   end
-
+  def buscar
+    @quartos = Quarto.filtrar_quartos(params[:numero], params[:quantidade_hospedes_intervalo], params[:faixa_preco_intervalo])
+  end
   # GET /quartos/1 or /quartos/1.json
   def show
   end
