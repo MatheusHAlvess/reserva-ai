@@ -57,5 +57,41 @@ class ClienteTest < ActiveSupport::TestCase
     assert_not cliente.save
   end
 
+  test "Busca de clientes por nome" do
+    cliente = Cliente.new(
+      nome_completo: "Lucas Da Silva",
+      data_nascimento: Date.new(2000, 5, 15),
+      cpf: "98765432100",
+      email: "lucassilva@gmail.com"
+    )
+    cliente.save
+    resultado_da_busca = Cliente.busca_por_termo(cliente.nome_completo)
+    assert_includes resultado_da_busca, cliente
+  end
+
+  test "Busca de clientes por CPF" do
+    cliente = Cliente.new(
+      nome_completo: "Lucas Da Silva",
+      data_nascimento: Date.new(2000, 5, 15),
+      cpf: "98765432100",
+      email: "lucassilva@gmail.com"
+    )
+    cliente.save
+    resultado_da_busca = Cliente.busca_por_termo(cliente.cpf)
+    assert_includes resultado_da_busca, cliente
+  end
+
+  test "Busca de clientes por email" do
+    cliente = Cliente.new(
+      nome_completo: "Lucas Da Silva",
+      data_nascimento: Date.new(2000, 5, 15),
+      cpf: "98765432100",
+      email: "lucassilva@gmail.com"
+    )
+    cliente.save
+    resultado_da_busca = Cliente.busca_por_termo(cliente.email)
+    assert_includes resultado_da_busca, cliente
+  end
+
 
 end
