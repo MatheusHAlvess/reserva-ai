@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get '/cliente/buscar', to: 'clientes#buscar', as: :busca_clientes
   get '/cliente/resultado', to: 'clientes#resultado', as: :resultado_busca_clientes
 
+  # Rota para a busca de quartos
+  get 'buscar_quartos', to: 'quartos#buscar', as: 'buscar_quartos'
+
   # Defines the root path route ("/")
   root "home#index"
   get '/home', to: 'home#index'
