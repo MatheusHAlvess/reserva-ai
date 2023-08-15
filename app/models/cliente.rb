@@ -3,7 +3,12 @@ class Cliente < ApplicationRecord
   has_many :quartos, through: :reservas
 
   validates :nome_completo,
-            presence: true
+            presence: true,
+            length: { minimum: 5, maximum: 250},
+            format: {
+              with: /\A[a-zA-Záàâãéèêíïóôõöúçñ ]+\z/i,
+              message: "deve conter apenas letras"
+            }
   validates :data_nascimento,
             presence: true
   validates :cpf,
@@ -18,6 +23,7 @@ class Cliente < ApplicationRecord
             format: {
               with: URI::MailTo::EMAIL_REGEXP
             }
+ 
   validate :data_nascimento_valida
 
   def data_nascimento_valida
@@ -25,4 +31,7 @@ class Cliente < ApplicationRecord
       errors.add(:data_nascimento, 'deve ser anterior ou igual a hoje')
     end
   end
+  scope :busca_por_termo, -> (termo) {
+    where("nome_completo LIKE ? OR cpf = ? OR email = ?", "%#{termo}%", termo, termo)
+  }
 end

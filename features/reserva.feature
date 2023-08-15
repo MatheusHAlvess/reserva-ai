@@ -11,11 +11,11 @@ Feature: Gerenciamento de reservas
     And eu clico no botao Reservar quarto
     Then eu vejo a reserva do quarto <quarto> cadastrada no nome de "<nome_completo>"
 
-    Examples:
-      | nome_completo | quarto | entrada    | saida      |
-      | Jose Joao     | 1      | 3000-01-01 | 3000-12-12 |
-      | ABCD          | 100    | 2100-05-06 | 2150-08-09 |
-      | DCBA          | 101    | 2100-01-01 | 2100-02-02 |
+  Examples:
+    | nome_completo | quarto | entrada    | saida      |
+    | Jose Joao     | 1      | 3000-01-01 | 3000-12-12 |
+    | ABCD ABCD     | 100    | 2100-05-06 | 2150-08-09 |
+    | DCBA DCBA     | 101    | 2100-01-01 | 2100-02-02 |
 
 
   Scenario Outline: Editar uma reserva
@@ -33,8 +33,8 @@ Feature: Gerenciamento de reservas
     Examples:
       | nome_completo | quarto | entrada    | saida      | nova_entrada |
       | Jose Joao     | 1      | 3000-01-01 | 3000-12-12 | 3000-01-02   |
-      | ABCD          | 100    | 2100-05-06 | 2150-08-09 | 2100-05-07   |
-      | DCBA          | 101    | 2100-01-01 | 2100-02-02 | 2100-01-02   |
+      | ABCD ABCD     | 100    | 2100-05-06 | 2150-08-09 | 2100-05-07   |
+      | DCBA DCBA     | 101    | 2100-01-01 | 2100-02-02 | 2100-01-02   |
 
   Scenario Outline: Tentar reservar um quarto para uma data passada
     Given existe um cliente cadastrado com nome "<nome_completo>"
@@ -47,8 +47,8 @@ Feature: Gerenciamento de reservas
     Examples:
       | nome_completo | quarto | entrada    | saida      | data            |
       | Jose Joao     | 1      | 3000-01-01 | 2000-01-01 | Saida           |
-      | ABCD          | 100    | 2000-01-01 | 3000-01-01 | Entrada         |
-      | DCBA          | 101    | 2000-12-12 | 2000-01-01 | Entrada/Saida   |
+      | ABCD ABCD     | 100    | 2000-01-01 | 3000-01-01 | Entrada         |
+      | DCBA BCDA     | 101    | 2000-12-12 | 2000-01-01 | Entrada/Saida   |
 
   Scenario Outline: Tentar reservar um quarto ja reservado
     Given existe um cliente cadastrado com nome "<nome_completo>"
@@ -59,11 +59,11 @@ Feature: Gerenciamento de reservas
     And eu clico no botao Reservar quarto
     Then devo ver uma mensagem de erro informando que o quarto <quarto> ja esta reservado de "<entrada>" ate "<saida>"
 
-    Examples:
-      | nome_completo | quarto | entrada    | saida      | nova_entrada | nova_saida |
-      | Jose Joao     | 1      | 3000-01-05 | 3000-01-10 | 3000-01-01   | 3000-01-06 |
-      | ABCD          | 100    | 3000-01-05 | 3000-01-10 | 3000-01-09   | 3000-01-15 |
-      | DCBA          | 101    | 3000-01-05 | 3000-01-10 | 3000-01-01   | 3000-01-15 |
+  Examples:
+    | nome_completo | quarto | entrada    | saida      | nova_entrada | nova_saida |
+    | Jose Joao     | 1      | 3000-01-05 | 3000-01-10 | 3000-01-01   | 3000-01-06 |
+    | ABCD ABCD     | 100    | 3000-01-05 | 3000-01-10 | 3000-01-09   | 3000-01-15 |
+    | DCBA DCBA     | 101    | 3000-01-05 | 3000-01-10 | 3000-01-01   | 3000-01-15 |
 
   Scenario Outline: Remover uma reserva
     Given existe um cliente cadastrado com nome "<nome_completo>"
@@ -75,8 +75,8 @@ Feature: Gerenciamento de reservas
     And eu clico no botao Deletar
     Then a reserva do quarto <quarto> de "<nome_completo>" nao deve constar na lista de reservas
 
-    Examples:
-      | nome_completo | quarto | entrada    | saida      |
-      | Jose Joao     | 1      | 3000-01-01 | 3000-12-12 |
-      | ABCD          | 100    | 2100-05-06 | 2150-08-09 |
-      | DCBA          | 101    | 2100-01-01 | 2100-02-02 |
+  Examples:
+    | nome_completo | quarto | entrada    | saida      |
+    | Jose Joao     | 1      | 3000-01-01 | 3000-12-12 |
+    | ABCD ABCD     | 100    | 2100-05-06 | 2150-08-09 |
+    | DCBA DCBA     | 101    | 2100-01-01 | 2100-02-02 |

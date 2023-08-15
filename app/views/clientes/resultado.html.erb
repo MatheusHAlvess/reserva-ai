@@ -1,0 +1,15 @@
+<% if @clientes.present? %>
+  <h2>Resultados:</h2>
+  <ul>
+    <% @clientes.each do |cliente| %>
+      <li>
+        <%= link_to cliente.nome_completo, cliente_path(cliente) %>
+        (CPF: <%= cliente.cpf %>, Email: <%= cliente.email %>)
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Nenhum cliente encontrado.</p>
+<% end %>
+
+<%= link_to 'Voltar para a busca', busca_clientes_path, class: 'btn btn-secondary' %>
