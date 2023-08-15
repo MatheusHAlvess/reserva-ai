@@ -57,7 +57,7 @@ Feature: Gerenciamento de reservas
     And estou na pagina de cadastro de reservas
     When preencho o formulario com cliente "<nome_completo>", quarto <quarto>, data de entrada "<nova_entrada>" e saida "<nova_saida>"
     And eu clico no botao Reservar quarto
-    Then devo ver uma mensagem de erro informando que o quarto <quarto> já está reservado de "<entrada>" até "<saida>"
+    Then devo ver uma mensagem de erro informando que o quarto <quarto> ja está reservado de "<entrada>" ate "<saida>"
 
   Examples:
     | nome_completo | quarto | entrada    | saida      | nova_entrada | nova_saida |
@@ -73,7 +73,7 @@ Feature: Gerenciamento de reservas
     When eu vejo a reserva do quarto <quarto> cadastrada no nome de "<nome_completo>"
     And eu clico na opcao Visualizar reserva
     And eu clico no botao Deletar
-    Then a reserva do quarto <quarto> de "<nome_completo>" não deve constar na lista de reservas
+    Then a reserva do quarto <quarto> de "<nome_completo>" nao deve constar na lista de reservas
 
   Examples:
     | nome_completo | quarto | entrada    | saida      |
