@@ -1,4 +1,3 @@
-<!-- app/views/home.html.erb -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +10,12 @@
       .button-container {
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          margin-top: 20px;
       }
       .button {
-          width: 22%;
+          width: 30%;
+          margin-bottom: 20px;
           padding: 20px;
           text-align: center;
           background-color: #007bff;
@@ -33,7 +35,11 @@
   <a href="<%= clientes_path %>" class="button">Cadastrar Cliente</a>
   <a href="<%= reservas_path %>" class="button">Criar Reserva</a>
   <a href="<%= busca_reservas_path %>" class="button">Buscar Reservas</a>
+</div>
+<div class="button-container">
   <a href="<%= busca_clientes_path %>" class="button">Buscar Clientes</a>
+  <a href="<%= quartos_path %>" class="button">Adicionar Quartos</a>
+  <a href="<%= buscar_quartos_path %>" class="button">Buscar Quartos</a>
 </div>
 </body>
 </html>
