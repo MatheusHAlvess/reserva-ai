@@ -57,7 +57,7 @@ Feature: Gerenciamento de reservas
     And estou na pagina de cadastro de reservas
     When preencho o formulario com cliente "<nome_completo>", quarto <quarto>, data de entrada "<nova_entrada>" e saida "<nova_saida>"
     And eu clico no botao Reservar quarto
-    Then devo ver uma mensagem de erro informando que o quarto <quarto> ja está reservado de "<entrada>" ate "<saida>"
+    Then devo ver uma mensagem de erro informando que o quarto <quarto> ja esta reservado de "<entrada>" ate "<saida>"
 
   Examples:
     | nome_completo | quarto | entrada    | saida      | nova_entrada | nova_saida |
