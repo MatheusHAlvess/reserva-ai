@@ -21,7 +21,7 @@ class Cliente < ApplicationRecord
   validate :data_nascimento_valida
 
   def data_nascimento_valida
-    if data_nascimento.present? && data_nascimento > Date.today
+    if data_nascimento.present? && data_nascimento > Time.zone.today
       errors.add(:data_nascimento, 'deve ser anterior ou igual a hoje')
     end
   end
