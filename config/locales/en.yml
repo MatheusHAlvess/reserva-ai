@@ -33,9 +33,9 @@ en:
   activerecord:
     errors:
       messages:
-        blank: 'é um atributo necessário'
-        invalid: 'inválido'
-        taken: 'já existe'
+        blank: 'eh um atributo necessario'
+        invalid: 'invalido'
+        taken: 'ja existe'
   date:
     formats:
       default: '%d/%m/%Y'

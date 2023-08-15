@@ -6,7 +6,7 @@ Feature: Gerenciamento de clientes
   Scenario: Registrar um novo cliente
     Given eu estou na pagina de cadastro de clientes
     When preencho o formulario com nome "Genario Correia", data de nascimento "1993-08-18", CPF "12345678901" e e-mail "genarioazevedo@gmail.com"
-    And eu clico no botão Create Cliente
+    And eu clico no botao Create Cliente
     Then eu vejo o cliente "Genario Correia" cadastrado
 
   Scenario: Editar os dados de um cliente
@@ -21,20 +21,20 @@ Feature: Gerenciamento de clientes
   Scenario: Tentar cadastrar cliente com CPF invalido
     Given eu estou na pagina de cadastro de clientes
     When eu preencho o formulario com nome "Genario Correia de Azevedo", data de nascimento "1993-08-18", CPF invalido "123456789" e e-mail "genarioazevedo@gmail.com"
-    And eu clico no botão Create Cliente
-    Then devo ver uma mensagem de erro informando que o CPF deve conter 11 dígitos numéricos
+    And eu clico no botao Create Cliente
+    Then devo ver uma mensagem de erro informando que o CPF deve conter 11 digitos numericos
 
-  Scenario: Tentar cadastrar cliente com e-mail inválido
+  Scenario: Tentar cadastrar cliente com e-mail invalido
     Given eu estou na pagina de cadastro de clientes
     When preencho o formulario com nome "Genario Correia de Azevedo", data de nascimento "1993-08-18", CPF "98765432109" e e-mail invalido "genarioazevedo@"
-    And eu clico no botão Create Cliente
+    And eu clico no botao Create Cliente
     Then devo ver uma mensagem de erro informando que o e-mail e invalido
 
   Scenario: Remover um cliente cadastrado
     Given estou na lista de clientes cadastrados
     And existe um cliente cadastrado com nome "Genario Correia de Azevedo"
     And eu vejo "Genario Correia de Azevedo" e clico em Visualizar Cliente
-    When clico no botão Deletar do cliente
-    Then o cliente "Genario Correia de Azevedo" não deve constar na lista de clientes cadastrados
+    When clico no botao Deletar do cliente
+    Then o cliente "Genario Correia de Azevedo" nao deve constar na lista de clientes cadastrados
 
 

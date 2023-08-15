@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quartos
   get 'home/index'
   resources :reservas
   resources :clientes
