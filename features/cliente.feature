@@ -5,7 +5,7 @@ Feature: Gerenciamento de clientes
 
   Scenario: Registrar um novo cliente
     Given eu estou na pagina de cadastro de clientes
-    When preencho o formulario com nome "Genario Correia", data de nascimento "1993-08-18", CPF "12345678901" e e-mail "genarioazevedo@gmail.com"
+    When preencho o formulario com nome "Genario Correia", data de nascimento "1993-08-18", CPF "03135892751" e e-mail "genarioazevedo@gmail.com"
     And eu clico no botao Create Cliente
     Then eu vejo o cliente "Genario Correia" cadastrado
 
@@ -22,11 +22,11 @@ Feature: Gerenciamento de clientes
     Given eu estou na pagina de cadastro de clientes
     When eu preencho o formulario com nome "Genario Correia de Azevedo", data de nascimento "1993-08-18", CPF invalido "123456789" e e-mail "genarioazevedo@gmail.com"
     And eu clico no botao Create Cliente
-    Then devo ver uma mensagem de erro informando que o CPF deve conter 11 digitos numericos
+    Then devo ver uma mensagem de erro informando que o CPF e invalido
 
   Scenario: Tentar cadastrar cliente com e-mail invalido
     Given eu estou na pagina de cadastro de clientes
-    When preencho o formulario com nome "Genario Correia de Azevedo", data de nascimento "1993-08-18", CPF "98765432109" e e-mail invalido "genarioazevedo@"
+    When preencho o formulario com nome "Genario Correia de Azevedo", data de nascimento "1993-08-18", CPF "03135892751" e e-mail invalido "genarioazevedo@"
     And eu clico no botao Create Cliente
     Then devo ver uma mensagem de erro informando que o e-mail e invalido
 

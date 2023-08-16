@@ -18,7 +18,7 @@ class Reserva < ApplicationRecord
   validate :quarto_reservado_duas_vezes
 
   def quarto_reservado_duas_vezes
-    unless quarto.nil?
+    unless quarto.blank?
       quarto.reservas.each do |reserva|
         next unless (entrada < reserva.saida) and (saida > reserva.entrada)
         eformat = reserva.entrada.strftime('%d/%m/%Y')

@@ -3,11 +3,11 @@
 one:
   nome_completo: ABCDEFG
   data_nascimento: 1900-01-01
-  cpf: 12345678900
+  cpf: 06705096985
   email: a@b.c
 
 two:
   nome_completo: HIJKLMN
   data_nascimento: 1900-12-12
-  cpf: 00987654321
+  cpf: 66828408888
   email: c@b.a

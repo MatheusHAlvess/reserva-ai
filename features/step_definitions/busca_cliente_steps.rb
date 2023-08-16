@@ -2,7 +2,7 @@ Given('que eu seja usuario do sistema') do
   visit '/clientes/new'
   fill_in 'cliente[nome_completo]', with: 'Cliente Exemplo'
   fill_in 'cliente[data_nascimento]', with: '2003-05-01'
-  fill_in 'cliente[cpf]', with: '12345678901'
+  fill_in 'cliente[cpf]', with: '03135892751'
   fill_in 'cliente[email]', with: 'cliente@example.com'
   click_button 'Create Cliente'
 end
