@@ -32,7 +32,9 @@ class Cliente < ApplicationRecord
       errors.add(:data_nascimento, 'deve ser anterior ou igual a hoje')
     end
   end
-  scope :busca_por_termo, -> (termo) {
+
+  scope :busca_por_termo, -> (termo) do
     where("nome_completo LIKE ? OR cpf = ? OR email = ?", "%#{termo}%", termo, termo)
-  }
+  end
+
 end
