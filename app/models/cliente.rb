@@ -13,11 +13,7 @@ class Cliente < ApplicationRecord
             presence: true
   validates :cpf,
             presence: true,
-            uniqueness: true,
-            format: {
-              with: /\A\d{11}\z/,
-              message: 'deve conter 11 digitos numericos'
-            }
+            uniqueness: true
   validates :email,
             presence: true,
             format: {
@@ -25,6 +21,11 @@ class Cliente < ApplicationRecord
             }
  
   validate :data_nascimento_valida
+  validate :cpf
+
+  def cpf_valido
+    errors.add(:cpf, :invalid) unless cpf.blank? or CPF.valid?(cpf)
+  end
 
   def data_nascimento_valida
     if data_nascimento.present? && data_nascimento > Time.zone.today
