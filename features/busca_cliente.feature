@@ -15,7 +15,7 @@ Feature: Busca de clientes
 
   Scenario: Buscar cliente por CPF valido
     Given que eu seja usuario do sistema
-    When o usuario busca por um cliente com o CPF valido "12345678901"
+    When o usuario busca por um cliente com o CPF valido "03135892751"
     Then o sistema exibe as informacoes do cliente "Cliente Exemplo"
 
   Scenario: Buscar cliente por nome inexistente

@@ -25,7 +25,7 @@ Given('existe um cliente cadastrado com nome {string}') do |nome_cliente|
   visit '/clientes/new'
   fill_in 'cliente[nome_completo]', with: nome_cliente
   fill_in 'cliente[data_nascimento]', with: '1990-01-01'
-  fill_in 'cliente[cpf]', with: '12345678901'
+  fill_in 'cliente[cpf]', with: '03135892751'
   fill_in 'cliente[email]', with: 'cliente@example.com'
   click_button 'Create Cliente'
 end
@@ -42,8 +42,8 @@ When('eu preencho o formulario com nome {string}, data de nascimento {string}, C
   fill_in 'cliente[email]', with: email
 end
 
-Then('devo ver uma mensagem de erro informando que o CPF deve conter {int} digitos numericos') do |quantidade_digitos|
-  expect(page).to have_content("deve conter #{quantidade_digitos} digitos numericos")
+Then('devo ver uma mensagem de erro informando que o CPF e invalido') do
+  expect(page).to have_content("Cpf invalido")
 end
 
 When('preencho o formulario com nome {string}, data de nascimento {string}, CPF {string} e e-mail invalido {string}') do |nome, data_nascimento, cpf, email_invalido|
