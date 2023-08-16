@@ -21,7 +21,7 @@ class Cliente < ApplicationRecord
             }
  
   validate :data_nascimento_valida
-  validate :cpf
+  validate :cpf_valido
 
   def cpf_valido
     errors.add(:cpf, :invalid) unless cpf.blank? or CPF.valid?(cpf)
